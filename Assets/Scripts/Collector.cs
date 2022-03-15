@@ -37,6 +37,8 @@ namespace PeliprojektiExamples
 				// Tallettaa scoreen kerätyt pisteet
 				score += collectable.Score;
 
+				Debug.Log("Object collected! " + collectable.Type + " taken!");
+
 				// Tallettaa ne sessioon
 				PlayerPrefs.SetInt("Points", score);
 

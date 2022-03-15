@@ -67,24 +67,24 @@ namespace Trashfarmer
                     transform.Translate(movement);
                     break;
                 case ControlState.Touch:
-                    // Koska Vector2:sta ei voi vähentää Vector3:a, pitää suorittaa tyyppimuunnos
+                    // Koska Vector2:sta ei voi vï¿½hentï¿½ï¿½ Vector3:a, pitï¿½ï¿½ suorittaa tyyppimuunnos
                     Vector2 travel = targetPosition - (Vector2)transform.position;
 
                     // Normalisointi muuntaa vektorin pituuden yhdeksi
                     Vector3 frameMovement = travel.normalized * velocity * Time.deltaTime;
 
-                    // Magnitude palauttaa vektorin pituuden. Tässä vektorin pituus kuvaa
-                    // jäljellä olevaa matkaa
+                    // Magnitude palauttaa vektorin pituuden. Tï¿½ssï¿½ vektorin pituus kuvaa
+                    // jï¿½ljellï¿½ olevaa matkaa
                     float distance = travel.magnitude;
                     
                     if (frameMovement.magnitude < distance)
 					{
-                        // Matkaa on vielä jäljellä, kuljetaan kohti kohdepistettä
+                        // Matkaa on vielï¿½ jï¿½ljellï¿½, kuljetaan kohti kohdepistettï¿½
                         transform.Translate(frameMovement);
                     }
 					else
 					{
-                        // Päämäärä saavutettu
+                        // Pï¿½ï¿½mï¿½ï¿½rï¿½ saavutettu
                         transform.position = targetPosition;
                         moveInput = Vector2.zero;
 					}
@@ -114,7 +114,7 @@ namespace Trashfarmer
             // Muunnetaan 2D koorinaatti 3D-koordinaatistoon
             Vector3 screenCoordinate = new Vector3(touchPosition.x, touchPosition.y, 0);
 
-            // Muunnetaan näytön koordinaatti pelimaailman koordinaatistoon
+            // Muunnetaan nï¿½ytï¿½n koordinaatti pelimaailman koordinaatistoon
             Vector3 worldCoordinate = Camera.main.ScreenToWorldPoint(screenCoordinate);
 
             // Muunnetaan maailmankoordinaatti 2D-koordinaatistoon. HUOM! implisiittinen
