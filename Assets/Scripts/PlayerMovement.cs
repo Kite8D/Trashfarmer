@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    public float moveSpeed = 5f;
-    
-    public Rigidbody2D rb;
-    public Animator animator;
+    public const string HorizontalAxisName = "Horizontal";
+    public const string VerticalAxisName = "Verical";
 
-    Vector2 movement;
+    [SerializeField]
+    private float speed = 1;
+
+    private Vector2 moveInput;
 
     void Start()
     {
@@ -20,16 +21,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        Vector2 movement = this.moveInput * Time.deltaTime * speed;
+        transform.Translate(movement);
     }
 
-	private void FixedUpdate()
+	private void OnMove(InputAction.CallbackContext callbackContext)
 	{
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        this.moveInput = callbackContext.ReadValue<Vector2>();
 	}
 }
