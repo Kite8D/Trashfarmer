@@ -18,6 +18,7 @@ namespace Trashfarmer
         private float velocity = 1;
         private Animator animator;
         private new SpriteRenderer renderer;
+        private new Rigidbody2D rigidbody;
         private Vector2 moveInput;
         private Vector2 touchPosition;
         private Vector2 targetPosition;
@@ -35,19 +36,30 @@ namespace Trashfarmer
             renderer = GetComponent<SpriteRenderer>();
             if (renderer == null)
 		    {
-                Debug.LogError("Character is missing an renderer component!");
+                Debug.LogError("Character is missing a renderer component!");
+                Debug.Break();
+            }
+
+            rigidbody = GetComponent<Rigidbody2D>();
+            if (rigidbody == null)
+			{
+                Debug.LogError("Character is missing a RigidBody2D component!");
                 Debug.Break();
             }
 	    }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            MoveCharacter();
             UpdateAnimator();
         }
 
-        private void UpdateAnimator()
+		private void FixedUpdate()
+		{
+            MoveCharacter();
+        }
+
+		private void UpdateAnimator()
 	    {
             renderer.flipX = moveInput.x < 0;
 
@@ -61,17 +73,17 @@ namespace Trashfarmer
             switch (controlState)
             {
                 case ControlState.GamePad:
-                    Vector2 movement = moveInput * Time.deltaTime * velocity;
+                    Vector2 movement = moveInput * Time.fixedDeltaTime * velocity;
                     // Transform property allows us to read and manipulate GameObject's position
                     // in the game world.
-                    transform.Translate(movement);
+                    rigidbody.MovePosition(rigidbody.position + movement);
                     break;
                 case ControlState.Touch:
                     // Koska Vector2:sta ei voi vähentää Vector3:a, pitää suorittaa tyyppimuunnos
                     Vector2 travel = targetPosition - (Vector2)transform.position;
 
                     // Normalisointi muuntaa vektorin pituuden yhdeksi
-                    Vector3 frameMovement = travel.normalized * velocity * Time.deltaTime;
+                    Vector2 frameMovement = travel.normalized * velocity * Time.deltaTime;
 
                     // Magnitude palauttaa vektorin pituuden. Tässä vektorin pituus kuvaa
                     // jäljellä olevaa matkaa
@@ -81,11 +93,12 @@ namespace Trashfarmer
 					{
                         // Matkaa on vielä jäljellä, kuljetaan kohti kohdepistettä
                         transform.Translate(frameMovement);
+                        rigidbody.MovePosition(rigidbody.position + frameMovement);
                     }
 					else
 					{
                         // Päämäärä saavutettu
-                        transform.position = targetPosition;
+                        rigidbody.MovePosition(targetPosition);
                         moveInput = Vector2.zero;
 					}
 
