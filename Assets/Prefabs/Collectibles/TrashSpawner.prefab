@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 3
   timerOffset: 2
-  prefab: {fileID: 4107145879187208744, guid: 9ef959cc6fc6bb74283aa83a83133b52, type: 3}
+  prefab: {fileID: 1250281246566743561, guid: 9ef959cc6fc6bb74283aa83a83133b52, type: 3}

@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using InventorySystem;
+using InventorySystem.Visual;
+using InventorySystem.UI;
 
 namespace Trashfarmer
 {
 
     public class CharacterControl : MonoBehaviour
     {
+        // Staattista fieldiä ei tuhota scenen unloadin myötä (koska se ei ole olion omaisuutta, vaan luokan).
+        private static Inventory Inventory;
+
         public enum ControlState
 		{
             GamePad,
@@ -16,6 +22,10 @@ namespace Trashfarmer
 
         [SerializeField]
         private float velocity = 1;
+
+        [SerializeField]
+        private float inventoryWeightLimit = 30;
+
         private Animator animator;
         private new SpriteRenderer renderer;
         private new Rigidbody2D rigidbody;
@@ -23,6 +33,7 @@ namespace Trashfarmer
         private Vector2 touchPosition;
         private Vector2 targetPosition;
         private ControlState controlState = ControlState.GamePad;
+        private InventoryUI inventoryUI;
 
 	    private void Awake()
 	    {
@@ -46,10 +57,23 @@ namespace Trashfarmer
                 Debug.LogError("Character is missing a RigidBody2D component!");
                 Debug.Break();
             }
+
+            if (Inventory == null)
+			{
+                // Luodaan uusi inventario vain siinä tapauksessa, että sitä ei aiemmin ollut olemassa.
+                Inventory = new Inventory(inventoryWeightLimit);
+			}
+
+            inventoryUI = FindObjectOfType<InventoryUI>();
 	    }
 
-        // Update is called once per frame
-        private void Update()
+		private void Start()
+		{
+            inventoryUI.SetInventory(Inventory);
+		}
+
+		// Update is called once per frame
+		private void Update()
         {
             UpdateAnimator();
         }
@@ -58,6 +82,24 @@ namespace Trashfarmer
 		{
             MoveCharacter();
         }
+
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+            ItemVisual itemVisual = other.GetComponent<ItemVisual>();
+            if (itemVisual != null && Inventory.AddItem(itemVisual.Item))
+			{
+                Debug.Log("Item added to the inventory!");
+                if (inventoryUI != null)
+				{
+                    inventoryUI.UpdateInventory();
+				}
+                Destroy(other.gameObject);
+			}
+			else
+			{
+                Debug.Log("Inventory weight limit met!");
+			}
+		}
 
 		private void UpdateAnimator()
 	    {
