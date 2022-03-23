@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Peliprojekti 
+namespace Trashfarmer
 {
 	public class Mover : MonoBehaviour, IMover 
 	{
