@@ -34,5 +34,17 @@ MonoBehaviour:
     m_Localized: Close
     m_Metadata:
       m_Items: []
+  - m_Id: 39326899814400
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43255163305984
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43294895947776
+    m_Localized: Effects
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
