@@ -9,6 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 373f959f203ee004c998364f8164bc00
   - enabled: 1
-    path: Assets/Scenes/Joonaksen_Testi.unity
+    path: Assets/Scenes/Farm.unity
     guid: 9f0a9d34847a5394d810d600bd6abdbc
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Joonaksen_Testi.unity
+    guid: 07dcae06e2ee00a4fb551b50d8186fba
+  - enabled: 1
+    path: Assets/Scenes/SceneTest.unity
+    guid: e2e73e37a5c3f064ab6af777da5f0633
+  - enabled: 1
+    path: Assets/Scenes/Loader.unity
+    guid: 6ba06341ef2a91444b6c763609bec9bc
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: e718a18edc9cd0845a2d17c10f177f3c
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 085570c14693e1847aa48a399e74bc90, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 52b65e7f7e49c5c42baac4595fedc337, type: 2}
