@@ -19,6 +19,18 @@ MonoBehaviour:
     m_Key: Weight
     m_Metadata:
       m_Items: []
+  - m_Id: 16554496671744
+    m_Key: OptionsHeadline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18739741638656
+    m_Key: LanguageHeadline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28966864076800
+    m_Key: Close
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

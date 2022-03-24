@@ -39279,34 +39279,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2030689091, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2030689091, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2030689091, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2030689091, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2030689091, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2030689091, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2030689093, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 1945819543, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1066107723}
     - target: {fileID: 933325397656230569, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -39394,14 +39370,6 @@ PrefabInstance:
     - target: {fileID: 933325397656230581, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
       propertyPath: m_Name
       value: GameUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6255274191790626042, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: localizedWeight.m_TableEntryReference.m_KeyId
-      value: 144433266688
-      objectReference: {fileID: 0}
-    - target: {fileID: 6255274191790626042, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
-      propertyPath: localizedWeight.m_TableReference.m_TableCollectionName
-      value: GUID:6af05b1bddd7bb3498ac63b114459783
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}

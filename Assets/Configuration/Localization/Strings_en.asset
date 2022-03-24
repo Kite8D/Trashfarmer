@@ -22,5 +22,17 @@ MonoBehaviour:
     m_Localized: Weight
     m_Metadata:
       m_Items: []
+  - m_Id: 16554496671744
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18739741638656
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28966864076800
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

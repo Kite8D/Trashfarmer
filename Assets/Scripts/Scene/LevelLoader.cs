@@ -12,10 +12,13 @@ namespace Trashfarmer
 		{
             None,
             Started,
-            InProgress
+            InProgress,
+			Options
 		}
 
         public const string LoaderName = "Loader";
+
+		public const string OptionsName = "Options";
 
         public static LevelLoader Current
 		{
@@ -33,6 +36,8 @@ namespace Trashfarmer
 
 		// Viittaus loading sceneen
 		private Scene loadingScene;
+
+		private Scene optionsScene;
 
 		private void Awake()
 		{
@@ -52,33 +57,48 @@ namespace Trashfarmer
 
 		private void OnEnable()
 		{
-			// Aletaan kuunnella eventtiä
+			// Aletaan kuunnella eventtiä.
 			SceneManager.sceneLoaded += OnLevelLoaded;
 		}
 
 		private void OnDisable()
 		{
-			// Lopetetaan eventin kuuntelu
+			// Lopetetaan eventin kuuntelu.
 			SceneManager.sceneLoaded -= OnLevelLoaded;
 		}	
+
+		public void LoadOptions()
+		{
+			// Pysäytä peli.
+			Time.timeScale = 0;
+			state = LoadingState.Options;
+			SceneManager.LoadSceneAsync(OptionsName, LoadSceneMode.Additive);
+		}
+
+		public void CloseOptions()
+		{
+			state = LoadingState.None;
+			SceneManager.UnloadSceneAsync(optionsScene);
+			Time.timeScale = 1; // Palauta pelin normaalinopeus.
+		}
 
 		public void LoadLevel(string sceneName)
 		{
 			nextSceneName = sceneName;
 			originalScene = SceneManager.GetActiveScene();
-			// Ladataan loading screen additiivisesti
+			// Ladataan loading screen additiivisesti.
 			SceneManager.LoadSceneAsync(LoaderName, LoadSceneMode.Additive);
 			state = LoadingState.Started;
 		}
 
-		// Suoritetaan, kun scene on ladattu
+		// Suoritetaan, kun scene on ladattu.
 		private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
 		{
 			switch(state)
 			{
 				case LoadingState.Started:
 					loadingScene = scene;
-					// Aloitetaan Fade animaatio
+					// Aloitetaan Fade animaatio.
 					GameObject[] rootObjects = loadingScene.GetRootGameObjects(); // Palauttaa scenen kaikki root GameObjectit.
 					foreach (GameObject item in rootObjects)
 					{
@@ -106,6 +126,9 @@ namespace Trashfarmer
 							break;
 						}
 					}
+					break;
+				case LoadingState.Options:
+					optionsScene = scene;
 					break;
 			}
 		}
