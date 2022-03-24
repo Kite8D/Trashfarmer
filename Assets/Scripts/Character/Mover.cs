@@ -9,6 +9,8 @@ namespace Trashfarmer
 
 		[SerializeField]
 		private float _speed;
+		[SerializeField]
+		private bool randomizeWaypoints;
     	[SerializeField]
     	private Transform [] waypoints;
     	private int waypointIndex = 0;
@@ -21,8 +23,7 @@ namespace Trashfarmer
 		public float Speed { 
 			get { return _speed; }
 			set { _speed = value; }
-			}
-
+		}
 		public void Move(Vector2 direction, float deltaTime)
 		{
 			if (waypointIndex <= waypoints.Length - 1)
@@ -36,13 +37,19 @@ namespace Trashfarmer
 				// Jos Enemy saavuttaa sen reittipisteen sijainnin, jota kohti hän käveli
 				// waypointIndex kasvaa 1:llä
 				// ja Enemy lähtee kävelemään seuraavaan reittipisteeseen
-				if (transform.position == waypoints[waypointIndex].transform.position)
+				if (transform.position == waypoints[waypointIndex].transform.position && randomizeWaypoints == false)
 				{
 					waypointIndex += 1;
+					Debug.Log("Waypoint number " + waypointIndex);
+				} 
+				else if (transform.position == waypoints[waypointIndex].transform.position && randomizeWaypoints == true) 
+				{
+					waypointIndex = Random.Range(0, waypoints.Length);
+					Debug.Log("Waypoint number " + waypointIndex);
 				}
 				
 				// Palaa alkuun ja aloita alusta
-				if (waypointIndex == waypoints.Length) {
+				if (waypointIndex == waypoints.Length && randomizeWaypoints == false) {
 					waypointIndex = 0;
 				}
         	}
