@@ -175,24 +175,24 @@ namespace Trashfarmer
             Debug.Log(context.phase);
 		}
 
-        private void OnTouchPosition(InputAction.CallbackContext contextyolo)
-		{
-            controlState = ControlState.Touch;
+  //      private void OnTouchPosition(InputAction.CallbackContext contextyolo)
+		//{
+  //          controlState = ControlState.Touch;
 
-            this.touchPosition = contextyolo.ReadValue<Vector2>();
+  //          this.touchPosition = contextyolo.ReadValue<Vector2>();
 
-            // Muunnetaan 2D koorinaatti 3D-koordinaatistoon
-            Vector3 screenCoordinate = new Vector3(touchPosition.x, touchPosition.y, 0);
+  //          // Muunnetaan 2D koorinaatti 3D-koordinaatistoon
+  //          Vector3 screenCoordinate = new Vector3(touchPosition.x, touchPosition.y, 0);
 
-            // Muunnetaan näytön koordinaatti pelimaailman koordinaatistoon
-            Vector3 worldCoordinate = Camera.main.ScreenToWorldPoint(screenCoordinate);
+  //          // Muunnetaan näytön koordinaatti pelimaailman koordinaatistoon
+  //          Vector3 worldCoordinate = Camera.main.ScreenToWorldPoint(screenCoordinate);
 
-            // Muunnetaan maailmankoordinaatti 2D-koordinaatistoon. HUOM! implisiittinen
-            // tyyppimuunnos Vector3:sta -> Vector2:seen
-            targetPosition = worldCoordinate;
+  //          // Muunnetaan maailmankoordinaatti 2D-koordinaatistoon. HUOM! implisiittinen
+  //          // tyyppimuunnos Vector3:sta -> Vector2:seen
+  //          targetPosition = worldCoordinate;
 
-            moveInput = (targetPosition - (Vector2)transform.position).normalized;
-		}
+  //          moveInput = (targetPosition - (Vector2)transform.position).normalized;
+		//}
     }
 
 }
