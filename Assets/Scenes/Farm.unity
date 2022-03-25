@@ -634,6 +634,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logstump
       objectReference: {fileID: 0}
+    - target: {fileID: 5300803472352702514, guid: 0ae569dd8845698408586caf39314c1b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7187512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300803472352702514, guid: 0ae569dd8845698408586caf39314c1b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.25010926
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300803472352702514, guid: 0ae569dd8845698408586caf39314c1b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06914508
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300803472352702514, guid: 0ae569dd8845698408586caf39314c1b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.053491294
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae569dd8845698408586caf39314c1b, type: 3}
 --- !u!4 &159838401 stripped
@@ -38256,9 +38272,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5625, y: 1.125}
-  m_Direction: 0
+  m_Offset: {x: -0.000000019323323, y: 0.08790425}
+  m_Size: {x: 0.56250006, y: 0.17857967}
+  m_Direction: 1
 --- !u!1001 &1385215955
 PrefabInstance:
   m_ObjectHideFlags: 0
