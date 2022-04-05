@@ -15,9 +15,9 @@ namespace InventorySystem.UI
 
         public Item Item
 		{
-            // Julkinen get määrittää, että propertyn arvon voi lukea mistä vain.
+            // Julkinen get mï¿½ï¿½rittï¿½ï¿½, ettï¿½ propertyn arvon voi lukea mistï¿½ vain.
             get;
-            // Privaatti set määrittää, että propertyn arvoa ei voi vasettaa olion ulkopuolelta.
+            // Privaatti set mï¿½ï¿½rittï¿½ï¿½, ettï¿½ propertyn arvoa ei voi vasettaa olion ulkopuolelta.
             private set;
 		}
 
@@ -37,7 +37,7 @@ namespace InventorySystem.UI
 		public void Setup(InventoryUI inventoryUI)
 		{
             ui = inventoryUI;
-            countText.gameObject.SetActive(false); // Piilota count tyhjistä itemeistä.
+            countText.gameObject.SetActive(false); // Piilota count tyhjistï¿½ itemeistï¿½.
 		}
 
 		private void Awake()
@@ -48,10 +48,18 @@ namespace InventorySystem.UI
 
 		public void SetItem(Item item)
 		{
-            Item = item;
-            image.sprite = ui.GetImage(item.Type);
-            countText.text = item.Count.ToString();
-            countText.gameObject.SetActive(true); // Teksti voi olla piilotettu. Aktivoidaan se.
+            if (item.Count > 0) {
+                Item = item;
+                image.sprite = ui.GetImage(item.Type);
+                countText.text = item.Count.ToString();
+                countText.gameObject.SetActive(true); // Teksti voi olla piilotettu. Aktivoidaan se.
+            } 
+            else if (item.Count <= 0) 
+            {
+                image.sprite = null;
+                countText.text = item.Count.ToString();
+                countText.gameObject.SetActive(false); // Piilota teksti
+            }
 		}
     }
 }
