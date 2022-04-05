@@ -36,15 +36,6 @@ namespace InventorySystem
 				}
                 return weight;
 			}
-
-            set
-			{
-                foreach (Item item in Items)
-				{
-                    weight -= item.TotalWeight;
-				}
-                weight = value;
-			}
 		}
 
         public Inventory(float weightLimit)
