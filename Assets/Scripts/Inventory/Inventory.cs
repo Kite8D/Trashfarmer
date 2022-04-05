@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace InventorySystem
 {
-	// Enum tyypittää inventorioon tallennettavat esineet.
+	// Enum tyypittï¿½ï¿½ inventorioon tallennettavat esineet.
 	public enum ItemType
 	{
         None = 0,
@@ -21,18 +21,29 @@ namespace InventorySystem
         public List<Item> Items { get; }
 
         public float WeightLimit { get; }
+        private float weight;
+        private int score;
 
-        // Inventoryn tämänhetkinen paino, lasketaan uudestaan joka kerta kysyttäessä.
+        // Inventoryn tï¿½mï¿½nhetkinen paino, lasketaan uudestaan joka kerta kysyttï¿½essï¿½.
         public float Weight
 		{
             get
 			{
-                float weight = 0;
-                foreach (Item item  in Items)
+                weight = 0;
+                foreach (Item item in Items)
 				{
                     weight += item.TotalWeight;
 				}
                 return weight;
+			}
+
+            set
+			{
+                foreach (Item item in Items)
+				{
+                    weight -= item.TotalWeight;
+				}
+                weight = value;
 			}
 		}
 
@@ -42,24 +53,36 @@ namespace InventorySystem
             Items = new List<Item>();
 		}
 
-        // Lisää uuden itemin inventarioon. Palauttaa true, jos lisätys onnistui.
-        // Paluuarvo on false, jos inventarion painoraja ylittyisi lisäyksen myötä.
+        public Item GetItem(ItemType Type) 
+        {
+            foreach (Item item in Items)
+            {
+                if (item.Type == Type)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        // Lisï¿½ï¿½ uuden itemin inventarioon. Palauttaa true, jos lisï¿½tys onnistui.
+        // Paluuarvo on false, jos inventarion painoraja ylittyisi lisï¿½yksen myï¿½tï¿½.
         public bool AddItem(Item item)
 		{
             if (Weight + item.TotalWeight > WeightLimit)
 			{
-                // Inventaarion painoraja ylittyy. Uutta itemiä ei voida lisätä.
+                // Inventaarion painoraja ylittyy. Uutta itemiï¿½ ei voida lisï¿½tï¿½.
                 return false;
 			}
 
-            // Selvitetään, onko inventariossa jo uutta itemiä vastaava item (tyypit vastaavat toisiaan).
+            // Selvitetï¿½ï¿½n, onko inventariossa jo uutta itemiï¿½ vastaava item (tyypit vastaavat toisiaan).
             Item existing = null;
             foreach (Item current in Items)
 			{
                 if (current.Type == item.Type)
 				{
                     existing = current;
-                    break; // Haettu item  löytyi, keskeytetään loop.
+                    break; // Haettu item  lï¿½ytyi, keskeytetï¿½ï¿½n loop.
 				}
 			}
 
@@ -70,8 +93,41 @@ namespace InventorySystem
 			}
 			else
 			{
-                // Lisätään uusi item inventarioon.
+                // Lisï¿½tï¿½ï¿½n uusi item inventarioon.
                 Items.Add(item);
+			}
+
+            return true;
+		}
+
+
+        public bool DepositItem(Item item, ItemDeposit itemDeposit)
+		{
+            // SelvitetÃ¤Ã¤n, onko inventaariossa tÃ¤mÃ¤n tyyppistÃ¤ tavaraa.
+            Item existing = null;
+            foreach (Item current in Items)
+			{
+                // Jos tÃ¤mÃ¤ item on sama kuin ItemDeposit-skriptissÃ¤ valittu item
+                if (current.Type == itemDeposit.takeItem)
+				{
+                    existing = current;
+                    break; // Haettu item  lï¿½ytyi, keskeytetï¿½ï¿½n loop.
+				}
+                else 
+                {
+                    // ItemiÃ¤ ei ollut.
+                    return false;
+                }
+			}
+
+            if (existing != null && existing.CanStack)
+			{
+                for (int i = 0; i < existing.Count; i++) {
+                    existing.Count -= item.Count;
+                    score++;
+                }
+                // Poistetaan item inventorysta ja otetaan paino pois
+                Items.Remove(item);
 			}
 
             return true;
