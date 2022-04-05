@@ -101,11 +101,31 @@ namespace Trashfarmer
 		{
             if (item != null && Inventory.DepositItem(item, itemDeposit))
             {
-                // Jos ItemDeposit-skriptistä valittu Itemi on Organic 
-                if (itemDeposit.takeItem.Equals(ItemType.Organic)) 
+                // Jos ItemDeposit-skriptistä valittu Itemi on Plastic 
+                if (itemDeposit.takeItem.Equals(ItemType.Plastic)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Plastic item has been deposited");
+                } 
+                else if (itemDeposit.takeItem.Equals(ItemType.Glass)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Glass item has been deposited");
+                } 
+                else if (itemDeposit.takeItem.Equals(ItemType.Organic)) 
                 {
                     inventoryUI.UpdateInventory();
                     Debug.Log("Organic item has been deposited");
+                } 
+                else if (itemDeposit.takeItem.Equals(ItemType.Metal)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Metal item has been deposited");
+                } 
+                else if (itemDeposit.takeItem.Equals(ItemType.Paper)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Paper item has been deposited");
                 }
                 
                 Debug.Log("Item has been removed from inventory");
@@ -114,7 +134,7 @@ namespace Trashfarmer
 
             Debug.Log("You are trying to deposit wrong type of a item!");
             return false;
-        }
+        }			
         
         private bool Collect(ItemVisual itemVisual)
 		{
