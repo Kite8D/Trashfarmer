@@ -34,8 +34,8 @@ namespace Trashfarmer
         private Vector2 targetPosition;
         private ControlState controlState = ControlState.GamePad;
         private InventoryUI inventoryUI;
-        public GameObject gameOverText, restartButton;
         private ItemDeposit itemDeposit;
+        public GameObject gameOverText, restartButton;
 
 	    private void Awake()
 	    {
@@ -103,6 +103,13 @@ namespace Trashfarmer
                     DestroyPlayer();
                 }
 		}
+
+        public void DestroyPlayer()
+            {
+                Destroy(gameObject);
+                gameOverText.SetActive(true);
+                restartButton.SetActive(true);
+            }
 
         private bool Deposit(Item item)
         public void DestroyPlayer()
