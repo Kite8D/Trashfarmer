@@ -112,14 +112,6 @@ namespace Trashfarmer
             }
 
         private bool Deposit(Item item)
-        public void DestroyPlayer()
-            {
-                Destroy(gameObject);
-                gameOverText.SetActive(true);
-                restartButton.SetActive(true);
-            }
-
-		private bool Collect(ItemVisual itemVisual)
 		{
             if (item != null && Inventory.DepositItem(item, itemDeposit))
             {
