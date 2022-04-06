@@ -34,6 +34,7 @@ namespace Trashfarmer
         private Vector2 targetPosition;
         private ControlState controlState = ControlState.GamePad;
         private InventoryUI inventoryUI;
+        public GameObject gameOverText, restartButton;
         private ItemDeposit itemDeposit;
 
 	    private void Awake()
@@ -70,6 +71,8 @@ namespace Trashfarmer
 
 		private void Start()
 		{
+            gameOverText.SetActive(false);
+            restartButton.SetActive(false);
             inventoryUI.SetInventory(Inventory);
 		}
 
@@ -95,9 +98,21 @@ namespace Trashfarmer
             {
                 Deposit(Inventory.GetItem(itemDeposit.takeItem));
             }
+            if(other.CompareTag("Enemy"))
+                {
+                    DestroyPlayer();
+                }
 		}
 
         private bool Deposit(Item item)
+        public void DestroyPlayer()
+            {
+                Destroy(gameObject);
+                gameOverText.SetActive(true);
+                restartButton.SetActive(true);
+            }
+
+		private bool Collect(ItemVisual itemVisual)
 		{
             if (item != null && Inventory.DepositItem(item, itemDeposit))
             {
