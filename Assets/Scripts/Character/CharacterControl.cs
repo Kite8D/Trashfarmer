@@ -11,7 +11,7 @@ namespace Trashfarmer
 
     public class CharacterControl : MonoBehaviour
     {
-        // Staattista fieldiä ei tuhota scenen unloadin myötä (koska se ei ole olion omaisuutta, vaan luokan).
+        // Staattista fieldiï¿½ ei tuhota scenen unloadin myï¿½tï¿½ (koska se ei ole olion omaisuutta, vaan luokan).
         private static Inventory Inventory;
 
         public enum ControlState
@@ -34,6 +34,7 @@ namespace Trashfarmer
         private Vector2 targetPosition;
         private ControlState controlState = ControlState.GamePad;
         private InventoryUI inventoryUI;
+        public GameObject gameOverText, restartButton;
 
 	    private void Awake()
 	    {
@@ -60,7 +61,7 @@ namespace Trashfarmer
 
             if (Inventory == null)
 			{
-                // Luodaan uusi inventario vain siinä tapauksessa, että sitä ei aiemmin ollut olemassa.
+                // Luodaan uusi inventario vain siinï¿½ tapauksessa, ettï¿½ sitï¿½ ei aiemmin ollut olemassa.
                 Inventory = new Inventory(inventoryWeightLimit);
 			}
 
@@ -69,6 +70,8 @@ namespace Trashfarmer
 
 		private void Start()
 		{
+            gameOverText.SetActive(false);
+            restartButton.SetActive(false);
             inventoryUI.SetInventory(Inventory);
 		}
 
@@ -87,7 +90,18 @@ namespace Trashfarmer
 		{
 			ItemVisual itemVisual = other.GetComponent<ItemVisual>();
 			Collect(itemVisual);
+            if(other.CompareTag("Enemy"))
+                {
+                    DestroyPlayer();
+                }
 		}
+
+        public void DestroyPlayer()
+            {
+                Destroy(gameObject);
+                gameOverText.SetActive(true);
+                restartButton.SetActive(true);
+            }
 
 		private bool Collect(ItemVisual itemVisual)
 		{
@@ -136,25 +150,25 @@ namespace Trashfarmer
                     rigidbody.MovePosition(rigidbody.position + movement);
                     break;
                 case ControlState.Touch:
-                    // Koska Vector2:sta ei voi vähentää Vector3:a, pitää suorittaa tyyppimuunnos
+                    // Koska Vector2:sta ei voi vï¿½hentï¿½ï¿½ Vector3:a, pitï¿½ï¿½ suorittaa tyyppimuunnos
                     Vector2 travel = targetPosition - (Vector2)transform.position;
 
                     // Normalisointi muuntaa vektorin pituuden yhdeksi
                     Vector2 frameMovement = travel.normalized * velocity * Time.deltaTime;
 
-                    // Magnitude palauttaa vektorin pituuden. Tässä vektorin pituus kuvaa
-                    // jäljellä olevaa matkaa
+                    // Magnitude palauttaa vektorin pituuden. Tï¿½ssï¿½ vektorin pituus kuvaa
+                    // jï¿½ljellï¿½ olevaa matkaa
                     float distance = travel.magnitude;
                     
                     if (frameMovement.magnitude < distance)
 					{
-                        // Matkaa on vielä jäljellä, kuljetaan kohti kohdepistettä
+                        // Matkaa on vielï¿½ jï¿½ljellï¿½, kuljetaan kohti kohdepistettï¿½
                         transform.Translate(frameMovement);
                         rigidbody.MovePosition(rigidbody.position + frameMovement);
                     }
 					else
 					{
-                        // Päämäärä saavutettu
+                        // Pï¿½ï¿½mï¿½ï¿½rï¿½ saavutettu
                         rigidbody.MovePosition(targetPosition);
                         moveInput = Vector2.zero;
 					}
@@ -184,7 +198,7 @@ namespace Trashfarmer
   //          // Muunnetaan 2D koorinaatti 3D-koordinaatistoon
   //          Vector3 screenCoordinate = new Vector3(touchPosition.x, touchPosition.y, 0);
 
-  //          // Muunnetaan näytön koordinaatti pelimaailman koordinaatistoon
+  //          // Muunnetaan nï¿½ytï¿½n koordinaatti pelimaailman koordinaatistoon
   //          Vector3 worldCoordinate = Camera.main.ScreenToWorldPoint(screenCoordinate);
 
   //          // Muunnetaan maailmankoordinaatti 2D-koordinaatistoon. HUOM! implisiittinen
