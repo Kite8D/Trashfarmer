@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -117,8 +118,7 @@ namespace InventorySystem
                     existing.Count -= item.Count;
                     score++;
                 }
-                // Poistetaan item inventorysta ja otetaan paino pois
-                Items.Remove(item);
+                // Items.Remove(item);
 			}
 
             return true;
