@@ -34,6 +34,7 @@ namespace Trashfarmer
         private Vector2 targetPosition;
         private ControlState controlState = ControlState.GamePad;
         private InventoryUI inventoryUI;
+        private ItemDeposit itemDeposit;
         public GameObject gameOverText, restartButton;
 
 	    private void Awake()
@@ -90,6 +91,13 @@ namespace Trashfarmer
 		{
 			ItemVisual itemVisual = other.GetComponent<ItemVisual>();
 			Collect(itemVisual);
+
+            itemDeposit = other.GetComponent<ItemDeposit>();
+
+            if (itemDeposit != null)
+            {
+                Deposit(Inventory.GetItem(itemDeposit.takeItem));
+            }
             if(other.CompareTag("Enemy"))
                 {
                     DestroyPlayer();
@@ -103,7 +111,46 @@ namespace Trashfarmer
                 restartButton.SetActive(true);
             }
 
-		private bool Collect(ItemVisual itemVisual)
+        private bool Deposit(Item item)
+		{
+            if (item != null && Inventory.DepositItem(item, itemDeposit))
+            {
+                // Jos ItemDeposit-skriptistä valittu Itemi on Plastic 
+                if (itemDeposit.takeItem.Equals(ItemType.Plastic)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Plastic item has been deposited");
+                } 
+                else if (itemDeposit.takeItem.Equals(ItemType.Glass)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Glass item has been deposited");
+                } 
+                else if (itemDeposit.takeItem.Equals(ItemType.Organic)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Organic item has been deposited");
+                } 
+                else if (itemDeposit.takeItem.Equals(ItemType.Metal)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Metal item has been deposited");
+                } 
+                else if (itemDeposit.takeItem.Equals(ItemType.Paper)) 
+                {
+                    inventoryUI.UpdateInventory();
+                    Debug.Log("Paper item has been deposited");
+                }
+                
+                Debug.Log("Item has been removed from inventory");
+                return true;
+            }
+
+            Debug.Log("You are trying to deposit wrong type of a item!");
+            return false;
+        }			
+        
+        private bool Collect(ItemVisual itemVisual)
 		{
 			if (itemVisual != null && Inventory.AddItem(itemVisual.Item))
 			{

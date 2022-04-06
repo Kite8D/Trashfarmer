@@ -45,7 +45,7 @@ namespace InventorySystem.UI
                 items[i].Setup(this);
 			}
 
-            // Deaktivoidaan template object. Sille ei ole enää tarvetta.
+            // Deaktivoidaan template object. Sille ei ole enï¿½ï¿½ tarvetta.
             template.gameObject.SetActive(false);
 		}
 
@@ -63,7 +63,7 @@ namespace InventorySystem.UI
 
 		private void OnLocalizationChanged(Locale locale)
 		{
-			// Kun lokalisaatio muuttuu, päivitetään komponentin tekstit.
+			// Kun lokalisaatio muuttuu, pï¿½ivitetï¿½ï¿½n komponentin tekstit.
 			SetWeight();
 		}
 
@@ -116,7 +116,7 @@ namespace InventorySystem.UI
 				}
 			}
 
-			// Tyyppiä vastaavaa UI itemiä ei löytynyt.
+			// Tyyppiï¿½ vastaavaa UI itemiï¿½ ei lï¿½ytynyt.
 			foreach (InventoryUIItem uiItem in items)
 			{
 				if (uiItem.Item == null)
