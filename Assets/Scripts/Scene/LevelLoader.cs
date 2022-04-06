@@ -39,6 +39,9 @@ namespace Trashfarmer
 
 		private Scene optionsScene;
 
+		[SerializeField]
+		private GameObject optionsButton;
+
 		private void Awake()
 		{
 			if (Current == null)
@@ -73,6 +76,7 @@ namespace Trashfarmer
 			Time.timeScale = 0;
 			state = LoadingState.Options;
 			SceneManager.LoadSceneAsync(OptionsName, LoadSceneMode.Additive);
+			optionsButton.SetActive(false);
 		}
 
 		public void CloseOptions()
@@ -80,6 +84,8 @@ namespace Trashfarmer
 			state = LoadingState.None;
 			SceneManager.UnloadSceneAsync(optionsScene);
 			Time.timeScale = 1; // Palauta pelin normaalinopeus.
+			optionsButton.SetActive(true);
+
 		}
 
 		public void LoadLevel(string sceneName)
