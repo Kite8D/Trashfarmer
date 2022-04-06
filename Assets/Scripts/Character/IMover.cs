@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // Aseta nimiavaruus omaa toteutustasi vastaavaksi
-namespace Peliprojekti
+namespace Trashfarmer
 {
 	public interface IMover
 	{
