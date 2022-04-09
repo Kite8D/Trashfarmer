@@ -27,7 +27,7 @@ namespace Trashfarmer
 		public void Move(Vector2 direction, float deltaTime)
 		{
 			if (waypointIndex <= waypoints.Length - 1)
-        	{
+			{
 
 				// Siirrä Enemy nykyisestä reittipisteestä seuraavaan
 				direction = transform.position = Vector2.MoveTowards(transform.position,
@@ -52,19 +52,22 @@ namespace Trashfarmer
 				if (waypointIndex == waypoints.Length && randomizeWaypoints == false) {
 					waypointIndex = 0;
 				}
-        	}
+			}
 		}
 
 
 		void Start()
 		{
 			// Asettaa Enemy sijainti ensimmäisen reittipisteen sijainniksi.
-        	transform.position = waypoints[waypointIndex].transform.position;
+         	transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, Speed * Time.deltaTime);
 		}
 
 		void Update()
 		{
-        	Move(direction, Time.deltaTime);
+        	if (GameObject.Find("Enemy").GetComponent<EnemyFollowAI>().enemyRoam) 
+			{
+				Move(direction, Time.deltaTime);
+			}
 		}
 	}
 

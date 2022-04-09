@@ -13,7 +13,7 @@ namespace Trashfarmer
 
         public DangerZoneDetector dzd;
         private Vector2 startPosition;
-        
+        public bool enemyRoam = false;
 
         void Start()
         {
@@ -37,11 +37,13 @@ namespace Trashfarmer
             {
                 Debug.Log("Enemy started to move");
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                enemyRoam = false;
             } 
             // Peruuttaa aloituspaikkaan, kun pelaaja ei ole alueella
             else if (dzd.PlayerInArea == false)
             {
-                transform.position = Vector2.MoveTowards(transform.position, startPosition, speed * Time.deltaTime);
+                // transform.position = Vector2.MoveTowards(transform.position, startPosition, speed * Time.deltaTime);
+                enemyRoam = true;
                 Debug.Log("Enemy backing up");
             }
         }
