@@ -72172,9 +72172,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1616286046}
     m_Modifications:
     - target: {fileID: 1945819543, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945819543, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1814148387}
+    - target: {fileID: 1945819543, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadOptions
+      objectReference: {fileID: 0}
     - target: {fileID: 2030689091, guid: 7b855d9fb6b76194da19b252779bfc14, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

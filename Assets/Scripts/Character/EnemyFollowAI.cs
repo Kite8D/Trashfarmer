@@ -35,7 +35,7 @@ namespace Trashfarmer
         {
             if (dzd.PlayerInArea == true)
             {
-                Debug.Log("Enemy started to move");
+               // Debug.Log("Enemy started to move");
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
                 enemyRoam = false;
             } 
@@ -44,7 +44,7 @@ namespace Trashfarmer
             {
                 // transform.position = Vector2.MoveTowards(transform.position, startPosition, speed * Time.deltaTime);
                 enemyRoam = true;
-                Debug.Log("Enemy backing up");
+               // Debug.Log("Enemy backing up");
             }
         }
     }

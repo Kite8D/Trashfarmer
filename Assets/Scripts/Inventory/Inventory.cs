@@ -115,8 +115,9 @@ namespace InventorySystem
             if (existing != null && existing.CanStack)
 			{
                 for (int i = 0; i < existing.Count; i++) {
+                    score += item.Count;
                     existing.Count -= item.Count;
-                    score++;
+                    Debug.Log("You got " + score + " points");
                 }
                 // Items.Remove(item);
 			}
