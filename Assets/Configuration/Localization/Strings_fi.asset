@@ -46,5 +46,9 @@ MonoBehaviour:
     m_Localized: Efektit
     m_Metadata:
       m_Items: []
+  - m_Id: 6615055556710400
+    m_Localized: Pisteet
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

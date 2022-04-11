@@ -23,7 +23,7 @@ namespace InventorySystem
 
         public float WeightLimit { get; }
         private float weight;
-        private int score;
+        public int score;
 
         // Inventoryn t�m�nhetkinen paino, lasketaan uudestaan joka kerta kysytt�ess�.
         public float Weight
