@@ -28,7 +28,7 @@ namespace Trashfarmer
 
         private LoadingState state = LoadingState.None;
 
-		// Viittaus aluperäiseen sceneen
+		// Viittaus aluperï¿½iseen sceneen
 		private Scene originalScene;
 
 		// Seuraavan scenen nimi
@@ -60,7 +60,7 @@ namespace Trashfarmer
 
 		private void OnEnable()
 		{
-			// Aletaan kuunnella eventtiä.
+			// Aletaan kuunnella eventtiï¿½.
 			SceneManager.sceneLoaded += OnLevelLoaded;
 		}
 
@@ -72,7 +72,7 @@ namespace Trashfarmer
 
 		public void LoadOptions()
 		{
-			// Pysäytä peli.
+			// Pysï¿½ytï¿½ peli.
 			Time.timeScale = 0;
 			state = LoadingState.Options;
 			SceneManager.LoadSceneAsync(OptionsName, LoadSceneMode.Additive);
@@ -151,7 +151,7 @@ namespace Trashfarmer
 			yield return new WaitForSeconds(waitTime); // Odottaa waitTimen verran.
 			
 			// Suoritus jatkuu waitTimen kuluttua.
-			// Näyttö on musta, joten pelaaja ei enää näe alkuperäistä sceneä.
+			// Nï¿½yttï¿½ on musta, joten pelaaja ei enï¿½ï¿½ nï¿½e alkuperï¿½istï¿½ sceneï¿½.
 			// Unloadataan se.
 			SceneManager.UnloadSceneAsync(originalScene);
 			// Ladataan seuraava scene.
