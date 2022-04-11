@@ -36,6 +36,11 @@ namespace InventorySystem.UI
         private InventoryUIItem[] items;
         private Inventory inventory;
 
+		[SerializeField]
+		private TMP_Text scoreText;
+		[SerializeField]
+		private LocalizedString localizedScore;
+
 		private void Awake()
 		{
             items = new InventoryUIItem[slots];
@@ -65,6 +70,7 @@ namespace InventorySystem.UI
 		{
 			// Kun lokalisaatio muuttuu, p�ivitet��n komponentin tekstit.
 			SetWeight();
+			SetScore();
 		}
 
 		public void SetInventory(Inventory inventory)
@@ -86,6 +92,7 @@ namespace InventorySystem.UI
 			}
 
 			SetWeight();
+			SetScore();
 		}
 
 		public Sprite GetImage(ItemType type)
@@ -104,6 +111,11 @@ namespace InventorySystem.UI
 		private void SetWeight()
 		{
 			weightText.text = $"{localizedWeight.GetLocalizedString()}: {inventory.Weight}";
+		}
+
+		private void SetScore()
+		{
+			scoreText.text = $"{localizedScore.GetLocalizedString()}: {inventory.score}";
 		}
 
 		private InventoryUIItem GetItem(ItemType type)

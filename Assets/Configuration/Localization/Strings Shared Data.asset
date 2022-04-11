@@ -43,6 +43,10 @@ MonoBehaviour:
     m_Key: SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 6615055556710400
+    m_Key: Score
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

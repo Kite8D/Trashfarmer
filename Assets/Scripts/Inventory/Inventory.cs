@@ -23,7 +23,7 @@ namespace InventorySystem
 
         public float WeightLimit { get; }
         private float weight;
-        private int score;
+        public int score;
 
         // Inventoryn t�m�nhetkinen paino, lasketaan uudestaan joka kerta kysytt�ess�.
         public float Weight
@@ -115,8 +115,9 @@ namespace InventorySystem
             if (existing != null && existing.CanStack)
 			{
                 for (int i = 0; i < existing.Count; i++) {
+                    score += item.Count;
                     existing.Count -= item.Count;
-                    score++;
+                    Debug.Log("You got " + score + " points");
                 }
                 // Items.Remove(item);
 			}
