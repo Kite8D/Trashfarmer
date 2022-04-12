@@ -7,9 +7,31 @@ namespace Trashfarmer
 {
     public class OptionsLoad : MonoBehaviour
     {
+
+		[SerializeField]
+		private GameObject optionsButton;
+
         public void Change(string scene)
         {
-            SceneManager.LoadSceneAsync(LevelLoader.OptionsName, LoadSceneMode.Additive);
+            LevelLoader.Current.LoadOptions();
         }
+
+        public static LevelLoader Current;
+
+        private void Awake()
+		{
+            if (Current == null)
+			{
+				//Current = this;
+			}
+			else
+			{
+				// LevelLoader on jo olemassa! Tuhotaan uusi instanssi.
+				Destroy(gameObject);
+				return;
+			}
+
+			DontDestroyOnLoad(gameObject);
+		}
 	}
 }
