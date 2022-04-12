@@ -7,9 +7,12 @@ namespace Trashfarmer
 {
     public class OptionsLoad : MonoBehaviour
     {
+        [SerializeField]
+		private string sceneName;
+
         public void Change(string scene)
         {
-            SceneManager.LoadSceneAsync(LevelLoader.OptionsName, LoadSceneMode.Additive);
+            LevelLoader.Current.LoadLevel(sceneName);
         }
 	}
 }
