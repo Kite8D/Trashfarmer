@@ -51,11 +51,11 @@ namespace Trashfarmer
 			else
 			{
 				// LevelLoader on jo olemassa! Tuhotaan uusi instanssi.
-				Destroy(gameObject);
+				// Destroy(gameObject);
 				return;
 			}
 
-			DontDestroyOnLoad(gameObject);
+			// DontDestroyOnLoad(gameObject);
 		}
 
 		private void OnEnable()
