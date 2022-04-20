@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Farm.unity
     guid: 9f0a9d34847a5394d810d600bd6abdbc
   - enabled: 1
-    path: Assets/Scenes/Joonaksen_Testi.unity
-    guid: 07dcae06e2ee00a4fb551b50d8186fba
-  - enabled: 1
-    path: Assets/Scenes/SceneTest.unity
-    guid: e2e73e37a5c3f064ab6af777da5f0633
-  - enabled: 1
     path: Assets/Scenes/Loader.unity
     guid: 6ba06341ef2a91444b6c763609bec9bc
   - enabled: 1
