@@ -50,5 +50,21 @@ MonoBehaviour:
     m_Localized: Pisteet
     m_Metadata:
       m_Items: []
+  - m_Id: 9803036128231424
+    m_Localized: Pelaa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9803087307128832
+    m_Localized: Sulje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9805416781627392
+    m_Localized: "PELI P\xC4\xC4TTYI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9805500739010560
+    m_Localized: ALOITA ALUSTA
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
