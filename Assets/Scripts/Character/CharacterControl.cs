@@ -115,6 +115,15 @@ namespace Trashfarmer
 		{
             if (item != null && Inventory.DepositItem(item, itemDeposit))
             {
+                AudioSource audio = itemDeposit.GetComponent<AudioSource>();
+                float delay = 1;
+
+                if (audio != null)
+				{
+                    audio.Play();
+                    delay = audio.clip.length;
+				}
+
                 // Jos ItemDeposit-skriptistä valittu Itemi on Plastic 
                 if (itemDeposit.takeItem.Equals(ItemType.Plastic)) 
                 {

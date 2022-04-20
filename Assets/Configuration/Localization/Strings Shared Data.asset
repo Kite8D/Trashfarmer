@@ -47,6 +47,22 @@ MonoBehaviour:
     m_Key: Score
     m_Metadata:
       m_Items: []
+  - m_Id: 9803036128231424
+    m_Key: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9803087307128832
+    m_Key: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9805416781627392
+    m_Key: Game Over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9805500739010560
+    m_Key: Restart
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
