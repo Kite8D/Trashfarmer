@@ -74,14 +74,14 @@ namespace Trashfarmer
 				Move(direction, Time.deltaTime);
 			}
 
-			if (transform.position.x < currentXPosition && mySpriteRenderer != null)
+			if (transform.position.x < currentXPosition && mySpriteRenderer != null && gameObject.tag != "Enemy")
         	{
 				// Päivittää X positionia, kunnes vaihtaa suuntaa
 				currentXPosition = transform.position.x;
 				// Flippaa spriten toistenpäin
            		mySpriteRenderer.flipX = true;
         	} 
-			else if (transform.position.x > currentXPosition && mySpriteRenderer != null)
+			else if (transform.position.x > currentXPosition && mySpriteRenderer != null && gameObject.tag != "Enemy")
 			{
 				currentXPosition = transform.position.x;
 				mySpriteRenderer.flipX = false;
