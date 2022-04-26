@@ -19,6 +19,8 @@ namespace Trashfarmer
 			get;
 		}
 		private Vector2 direction;
+		private SpriteRenderer mySpriteRenderer;
+		private float currentXPosition;
 
 		public float Speed { 
 			get { return _speed; }
@@ -60,6 +62,9 @@ namespace Trashfarmer
 		{
 			// Asettaa Enemy sijainti ensimmäisen reittipisteen sijainniksi.
          	transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, Speed * Time.deltaTime);
+
+			mySpriteRenderer = GetComponent<SpriteRenderer>();
+			currentXPosition = transform.position.x;
 		}
 
 		void Update()
@@ -67,6 +72,19 @@ namespace Trashfarmer
         	if (GameObject.Find("Enemy").GetComponent<EnemyFollowAI>().enemyRoam) 
 			{
 				Move(direction, Time.deltaTime);
+			}
+
+			if (transform.position.x < currentXPosition && mySpriteRenderer != null && gameObject.tag != "Enemy")
+        	{
+				// Päivittää X positionia, kunnes vaihtaa suuntaa
+				currentXPosition = transform.position.x;
+				// Flippaa spriten toistenpäin
+           		mySpriteRenderer.flipX = true;
+        	} 
+			else if (transform.position.x > currentXPosition && mySpriteRenderer != null && gameObject.tag != "Enemy")
+			{
+				currentXPosition = transform.position.x;
+				mySpriteRenderer.flipX = false;
 			}
 		}
 	}
