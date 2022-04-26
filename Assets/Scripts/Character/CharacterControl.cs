@@ -113,7 +113,7 @@ namespace Trashfarmer
 
         private bool Deposit(Item item)
 		{
-            if (item != null && Inventory.DepositItem(item, itemDeposit))
+            if (item != null && item.Count != 0 && Inventory.DepositItem(item, itemDeposit))
             {
                 AudioSource audio = itemDeposit.GetComponent<AudioSource>();
                 float delay = 1;
