@@ -45375,11 +45375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4260833679552956026, guid: 97067d4d4cbafb34d9314e6b5a7cc11c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.34
+      value: 68.14
       objectReference: {fileID: 0}
     - target: {fileID: 4260833679552956026, guid: 97067d4d4cbafb34d9314e6b5a7cc11c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.05
+      value: -12.04
       objectReference: {fileID: 0}
     - target: {fileID: 4260833679552956026, guid: 97067d4d4cbafb34d9314e6b5a7cc11c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -70970,11 +70970,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8045715705006301935, guid: 998419a237d4d904198b514142af38bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66.17
+      value: 63.36
       objectReference: {fileID: 0}
     - target: {fileID: 8045715705006301935, guid: 998419a237d4d904198b514142af38bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.67
+      value: -13.74
       objectReference: {fileID: 0}
     - target: {fileID: 8045715705006301935, guid: 998419a237d4d904198b514142af38bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -74432,6 +74432,7 @@ GameObject:
   - component: {fileID: 1382880838}
   - component: {fileID: 1382880839}
   - component: {fileID: 1382880840}
+  - component: {fileID: 1382880841}
   m_Layer: 0
   m_Name: Farmer
   m_TagString: Player
@@ -74587,9 +74588,35 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000019323323, y: 0.08790425}
-  m_Size: {x: 0.56250006, y: 0.17857967}
+  m_Offset: {x: 0.002336515, y: 0.10659813}
+  m_Size: {x: 0.4082759, y: 0.2159686}
   m_Direction: 1
+--- !u!61 &1382880841
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382880833}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000008940697, y: 0.546875}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.5625, y: 1.09375}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3779177, y: 1.09375}
+  m_EdgeRadius: 0
 --- !u!1001 &1390469806
 PrefabInstance:
   m_ObjectHideFlags: 0

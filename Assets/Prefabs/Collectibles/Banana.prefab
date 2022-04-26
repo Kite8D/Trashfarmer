@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1250281246566743560}
   - component: {fileID: 7399398669263731643}
   - component: {fileID: 1679432297799248534}
+  - component: {fileID: 4378671853360037541}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Untagged
@@ -298,3 +299,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4378671853360037541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250281246566743561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520acb4bcd437f64fb31166273770ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGroundHitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4378671853360037541}
+        m_TargetAssemblyTypeName: Bounce2, Assembly-CSharp
+        m_MethodName: Bounce
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4378671853360037541}
+        m_TargetAssemblyTypeName: Bounce2, Assembly-CSharp
+        m_MethodName: SlowDownVelocity
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  trnsObject: {fileID: 1250281246566743557}
+  trnsBody: {fileID: 1250281246566743557}
+  gravity: -11.11
+  groundVelocity: {x: -11, y: 3.25}
+  verticalVelocity: 0.92
+  isGrounded: 1
