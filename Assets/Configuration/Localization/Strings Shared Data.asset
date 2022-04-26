@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Strings Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Strings
+  m_TableCollectionNameGuidString: 6af05b1bddd7bb3498ac63b114459783
+  m_Entries:
+  - m_Id: 144433266688
+    m_Key: Weight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16554496671744
+    m_Key: OptionsHeadline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18739741638656
+    m_Key: LanguageHeadline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28966864076800
+    m_Key: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39326899814400
+    m_Key: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43255163305984
+    m_Key: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43294895947776
+    m_Key: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6615055556710400
+    m_Key: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9803036128231424
+    m_Key: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9803087307128832
+    m_Key: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9805416781627392
+    m_Key: Game Over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9805500739010560
+    m_Key: Restart
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1648107266389

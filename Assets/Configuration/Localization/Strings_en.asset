@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Strings_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 6af05b1bddd7bb3498ac63b114459783, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 144433266688
+    m_Localized: Weight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16554496671744
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18739741638656
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28966864076800
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39326899814400
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43255163305984
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43294895947776
+    m_Localized: Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6615055556710400
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9803036128231424
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9803087307128832
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9805416781627392
+    m_Localized: GAME OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9805500739010560
+    m_Localized: RESTART
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1
