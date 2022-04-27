@@ -42,12 +42,12 @@ namespace Trashfarmer
 				if (transform.position == waypoints[waypointIndex].transform.position && randomizeWaypoints == false)
 				{
 					waypointIndex += 1;
-					Debug.Log("Waypoint number " + waypointIndex);
+					// Debug.Log("Waypoint number " + waypointIndex);
 				} 
 				else if (transform.position == waypoints[waypointIndex].transform.position && randomizeWaypoints == true) 
 				{
 					waypointIndex = Random.Range(0, waypoints.Length);
-					Debug.Log("Waypoint number " + waypointIndex);
+					// Debug.Log("Waypoint number " + waypointIndex);
 				}
 				
 				// Palaa alkuun ja aloita alusta
