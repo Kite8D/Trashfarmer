@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1250281246566743561
+--- !u!1 &8446884960974427140
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1250281246566743557}
-  - component: {fileID: 1250281246566743558}
-  - component: {fileID: 1250281246566743560}
-  - component: {fileID: 7399398669263731643}
-  - component: {fileID: 1679432297799248534}
-  - component: {fileID: 4378671853360037541}
+  - component: {fileID: 8446884960974427136}
+  - component: {fileID: 8446884960974427139}
+  - component: {fileID: 8446884960974427138}
+  - component: {fileID: 8446884960974427141}
+  - component: {fileID: 7637377270627238481}
   m_Layer: 0
-  m_Name: Banana
+  m_Name: Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1250281246566743557
+--- !u!4 &8446884960974427136
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250281246566743561}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.04, y: 1.14, z: 0}
+  m_GameObject: {fileID: 8446884960974427140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.1045365, y: 2.3088627, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1250281246566743558
+--- !u!212 &8446884960974427139
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250281246566743561}
+  m_GameObject: {fileID: 8446884960974427140}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,58 +74,58 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 3375b8702824a5640b268515040f73fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7036618c1ca672c478caab1ef8f91d1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1250281246566743560
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250281246566743561}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.28
---- !u!114 &7399398669263731643
+--- !u!114 &8446884960974427138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250281246566743561}
+  m_GameObject: {fileID: 8446884960974427140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ed699f5162b651498e54869d6f33c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    Name: Banana
+    Name: Apple
     Weight: 1
     Type: 3
     CanStack: 1
     Count: 1
---- !u!82 &1679432297799248534
+--- !u!58 &8446884960974427141
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8446884960974427140}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0048304796}
+  serializedVersion: 2
+  m_Radius: 0.18602002
+--- !u!82 &7637377270627238481
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250281246566743561}
+  m_GameObject: {fileID: 8446884960974427140}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8082938188997562065, guid: bda53323178d2da4db637d657dfd822b, type: 2}
@@ -216,48 +215,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4378671853360037541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250281246566743561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520acb4bcd437f64fb31166273770ef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onGroundHitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4378671853360037541}
-        m_TargetAssemblyTypeName: Bounce2, Assembly-CSharp
-        m_MethodName: Bounce
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1.2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4378671853360037541}
-        m_TargetAssemblyTypeName: Bounce2, Assembly-CSharp
-        m_MethodName: SlowDownVelocity
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  trnsObject: {fileID: 1250281246566743557}
-  trnsBody: {fileID: 1250281246566743557}
-  gravity: -11.11
-  groundVelocity: {x: -11, y: 3.25}
-  verticalVelocity: 0.92
-  isGrounded: 1
