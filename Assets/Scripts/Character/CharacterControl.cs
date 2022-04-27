@@ -110,6 +110,8 @@ namespace Trashfarmer
                 Destroy(gameObject);
                 gameOverText.SetActive(true);
                 restartButton.SetActive(true);
+                Inventory.score = 0;
+                Inventory.resetInventory(inventoryWeightLimit);
             }
 
         private bool Deposit(Item item)
