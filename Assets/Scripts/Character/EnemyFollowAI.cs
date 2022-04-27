@@ -14,10 +14,15 @@ namespace Trashfarmer
         public DangerZoneDetector dzd;
         private Vector2 startPosition;
         public bool enemyRoam = false;
+        private SpriteRenderer mySpriteRenderer;
+		private float currentXPosition;
 
         void Start()
         {
             startPosition = transform.position;
+
+            mySpriteRenderer = GetComponent<SpriteRenderer>();
+			currentXPosition = target.position.x;
         }
 
         //Scripti tunnistaa pelaajaan tagista: Player
@@ -38,6 +43,19 @@ namespace Trashfarmer
                // Debug.Log("Enemy started to move");
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
                 enemyRoam = false;
+
+                if (target.position.x > currentXPosition && mySpriteRenderer != null)
+                {
+                    // Päivittää X positionia, kunnes vaihtaa suuntaa
+                    currentXPosition = transform.position.x;
+                    // Flippaa spriten toistenpäin
+                    mySpriteRenderer.flipX = true;
+                } 
+                else if (target.position.x < currentXPosition && mySpriteRenderer != null)
+                {
+                    currentXPosition = transform.position.x;
+                    mySpriteRenderer.flipX = false;
+                }
             } 
             // Peruuttaa aloituspaikkaan, kun pelaaja ei ole alueella
             else if (dzd.PlayerInArea == false)
