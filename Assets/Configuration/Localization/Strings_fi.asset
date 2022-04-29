@@ -66,5 +66,16 @@ MonoBehaviour:
     m_Localized: ALOITA ALUSTA
     m_Metadata:
       m_Items: []
+  - m_Id: 13103812669915136
+    m_Localized: Ohjeet :D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13103904143491072
+    m_Localized: "Juuh elikk\xE4s :D Ker\xE4\xE4 roskia ja sy\xF6t\xE4 roskat el\xE4imille,
+      mutta varo roskalimahirvi\xF6\xF6! Pisteit\xE4 saat sy\xF6tt\xE4m\xE4ll\xE4
+      oikeat roskat oikealle el\xE4imelle. Roskat tulee sy\xF6tt\xE4\xE4 ker\xE4tyss\xE4
+      j\xE4jestyksess\xE4, muuten menet\xE4t pisteit\xE4 :D Kantsii siis olla tarkkana!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
