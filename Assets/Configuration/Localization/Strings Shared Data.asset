@@ -63,6 +63,14 @@ MonoBehaviour:
     m_Key: Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 13103812669915136
+    m_Key: How  to play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13103904143491072
+    m_Key: InfoText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -66,5 +66,16 @@ MonoBehaviour:
     m_Localized: RESTART
     m_Metadata:
       m_Items: []
+  - m_Id: 13103812669915136
+    m_Localized: How to play :D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13103904143491072
+    m_Localized: Juuh eligs :D Collect trash and feed them to trashanimals but beware
+      the trashgoomonster! Feeding right trash to right animal gives you points.
+      Trash must be fed in order they were collected or you lose points :D So be
+      careful!
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

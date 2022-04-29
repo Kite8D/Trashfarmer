@@ -278,7 +278,7 @@ MonoBehaviour:
   - Type: 4
     Image: {fileID: 21300000, guid: 6724f2209b57bfb48b849e79605d7f47, type: 3}
   - Type: 5
-    Image: {fileID: 21300000, guid: 629672668b628b1419e1c0c43f34ee19, type: 3}
+    Image: {fileID: 21300000, guid: 29a6882197e9f2241b4b62f1f956a4b9, type: 3}
   localizedWeight:
     m_TableReference:
       m_TableCollectionName: GUID:6af05b1bddd7bb3498ac63b114459783
@@ -1060,6 +1060,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 933325397656230569}
     m_Modifications:
+    - target: {fileID: 5549829908493033952, guid: e0a877d4cfe4cfc45ac6777e7de94419, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549829908493033952, guid: e0a877d4cfe4cfc45ac6777e7de94419, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6989981421927b44c8a2d7ec08e3f48a, type: 3}
     - target: {fileID: 5549829908493033964, guid: e0a877d4cfe4cfc45ac6777e7de94419, type: 3}
       propertyPath: m_Name
       value: OpenOptionsButton
@@ -1264,6 +1272,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7073854679268347460, guid: 93ed1ba5bae5d544482914ef32a4affc, type: 3}
       propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6989981421927b44c8a2d7ec08e3f48a, type: 3}
+    - target: {fileID: 7073854679268347461, guid: 93ed1ba5bae5d544482914ef32a4affc, type: 3}
+      propertyPath: originalSprite
       value: 
       objectReference: {fileID: 21300000, guid: 6989981421927b44c8a2d7ec08e3f48a, type: 3}
     m_RemovedComponents: []
