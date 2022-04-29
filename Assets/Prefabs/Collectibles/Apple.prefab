@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8446884960974427138}
   - component: {fileID: 8446884960974427141}
   - component: {fileID: 7637377270627238481}
+  - component: {fileID: 6027110255430422913}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &8446884960974427138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +216,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6027110255430422913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8446884960974427140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520acb4bcd437f64fb31166273770ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGroundHitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6027110255430422913}
+        m_TargetAssemblyTypeName: Bounce2, Assembly-CSharp
+        m_MethodName: Bounce
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6027110255430422913}
+        m_TargetAssemblyTypeName: Bounce2, Assembly-CSharp
+        m_MethodName: SlowDownVelocity
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  trnsObject: {fileID: 8446884960974427136}
+  trnsBody: {fileID: 8446884960974427136}
+  gravity: -11.11
+  groundVelocity: {x: -11, y: 3.25}
+  verticalVelocity: 0.92
+  isGrounded: 1
