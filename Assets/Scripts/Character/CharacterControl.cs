@@ -137,7 +137,9 @@ namespace Trashfarmer
                 Debug.Log("Item has been removed from inventory");
                 return true;
             }
-
+            
+            Inventory.score -= 1;
+            inventoryUI.UpdateInventory();
             Debug.Log("You are trying to deposit wrong type of a item!");
             return false;
         }			
