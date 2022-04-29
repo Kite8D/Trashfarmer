@@ -62,5 +62,12 @@ namespace InventorySystem.UI
                 countText.gameObject.SetActive(false); // Piilota teksti
             }
 		}
+
+        public void DeleteItem()
+        {
+            Item = null;
+            image.sprite = originalSprite;
+            countText.gameObject.SetActive(false); // Piilota teksti
+        }
     }
 }

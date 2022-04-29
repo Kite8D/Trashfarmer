@@ -120,7 +120,7 @@ namespace InventorySystem
                     existing.Count -= item.Count;
                     Debug.Log("You got " + score + " points");
                 }
-                // Items.Remove(item);
+               Items.Remove(item);
 			}
 
             return true;
