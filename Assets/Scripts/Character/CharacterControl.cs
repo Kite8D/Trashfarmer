@@ -98,10 +98,11 @@ namespace Trashfarmer
             {
                 Deposit(Inventory.GetItem(itemDeposit.takeItem));
             }
-            if(other.CompareTag("Enemy"))
-                {
-                    DestroyPlayer();
-                }
+
+            if (other.CompareTag("Enemy"))
+            {
+                DestroyPlayer();
+            }
 		}
 
         public void DestroyPlayer()
@@ -109,11 +110,13 @@ namespace Trashfarmer
                 Destroy(gameObject);
                 gameOverText.SetActive(true);
                 restartButton.SetActive(true);
+                Inventory.score = 0;
+                Inventory.resetInventory(inventoryWeightLimit);
             }
 
         private bool Deposit(Item item)
 		{
-            if (item != null && Inventory.DepositItem(item, itemDeposit))
+            if (item != null && item.Count != 0 && Inventory.DepositItem(item, itemDeposit))
             {
                 AudioSource audio = itemDeposit.GetComponent<AudioSource>();
                 float delay = 1;
@@ -124,32 +127,12 @@ namespace Trashfarmer
                     delay = audio.clip.length;
 				}
 
-                // Jos ItemDeposit-skriptistä valittu Itemi on Plastic 
-                if (itemDeposit.takeItem.Equals(ItemType.Plastic)) 
+                // Jos ItemDeposit-skriptistä valittu item on sama kuin inventoryn
+                if (itemDeposit.takeItem.Equals(item.Type)) 
                 {
                     inventoryUI.UpdateInventory();
-                    Debug.Log("Plastic item has been deposited");
+                    Debug.Log("Deposited " + item.Type.ToString() + " item successfully");
                 } 
-                else if (itemDeposit.takeItem.Equals(ItemType.Glass)) 
-                {
-                    inventoryUI.UpdateInventory();
-                    Debug.Log("Glass item has been deposited");
-                } 
-                else if (itemDeposit.takeItem.Equals(ItemType.Organic)) 
-                {
-                    inventoryUI.UpdateInventory();
-                    Debug.Log("Organic item has been deposited");
-                } 
-                else if (itemDeposit.takeItem.Equals(ItemType.Metal)) 
-                {
-                    inventoryUI.UpdateInventory();
-                    Debug.Log("Metal item has been deposited");
-                } 
-                else if (itemDeposit.takeItem.Equals(ItemType.Paper)) 
-                {
-                    inventoryUI.UpdateInventory();
-                    Debug.Log("Paper item has been deposited");
-                }
                 
                 Debug.Log("Item has been removed from inventory");
                 return true;
