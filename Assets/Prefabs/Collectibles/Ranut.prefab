@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 345459381978890672}
   - component: {fileID: 345459381978890675}
   - component: {fileID: 5115346349971170052}
+  - component: {fileID: 2662473322391374759}
   m_Layer: 0
   m_Name: Ranut
   m_TagString: Untagged
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &345459381978890672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +216,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2662473322391374759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345459381978890674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520acb4bcd437f64fb31166273770ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGroundHitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2662473322391374759}
+        m_TargetAssemblyTypeName: Bounce2, Assembly-CSharp
+        m_MethodName: Bounce
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2662473322391374759}
+        m_TargetAssemblyTypeName: Bounce2, Assembly-CSharp
+        m_MethodName: SlowDownVelocity
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  trnsObject: {fileID: 345459381978890678}
+  trnsBody: {fileID: 345459381978890678}
+  gravity: -11.11
+  groundVelocity: {x: -11, y: 3.25}
+  verticalVelocity: 0.92
+  isGrounded: 1

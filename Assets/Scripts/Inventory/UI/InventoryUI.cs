@@ -81,6 +81,11 @@ namespace InventorySystem.UI
 
 		public void UpdateInventory()
 		{
+			for (int i = 0; i < slots; i++) 
+			{
+				items[i].DeleteItem();
+			}
+			
 			foreach (Item item in inventory.Items)
 			{
 				// GetItem luultavasti bugaa uniikkien itemien kanssa.

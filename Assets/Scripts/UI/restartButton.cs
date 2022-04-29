@@ -21,7 +21,7 @@ namespace Trashfarmer
 
         public void restartScene()
         {
-            SceneManager.LoadScene("Farm");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

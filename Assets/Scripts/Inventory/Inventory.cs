@@ -19,9 +19,9 @@ namespace InventorySystem
 
     public class Inventory
     {
-        public List<Item> Items { get; }
+        public List<Item> Items { get; set; }
 
-        public float WeightLimit { get; }
+        public float WeightLimit { get; set; }
         private float weight;
         public int score;
 
@@ -108,6 +108,7 @@ namespace InventorySystem
                 else 
                 {
                     // Itemiä ei ollut.
+                    Debug.Log("XAXAXAXAXAAXAXAXAXAXAXAX");
                     return false;
                 }
 			}
@@ -119,10 +120,17 @@ namespace InventorySystem
                     existing.Count -= item.Count;
                     Debug.Log("You got " + score + " points");
                 }
-                // Items.Remove(item);
+               Items.Remove(item);
 			}
 
             return true;
 		}
+
+        public Inventory resetInventory(float weightLimit)
+		{
+            WeightLimit = weightLimit;
+            Items = new List<Item>();
+            return null;
+        }
     }
 }

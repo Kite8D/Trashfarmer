@@ -12,6 +12,7 @@ namespace InventorySystem.UI
         private Image image;
         private TMP_Text countText;
         private InventoryUI ui;
+        public Sprite originalSprite;
 
         public Item Item
 		{
@@ -56,10 +57,17 @@ namespace InventorySystem.UI
             } 
             else if (item.Count <= 0) 
             {
-                image.sprite = null;
+                image.sprite = originalSprite;
                 countText.text = item.Count.ToString();
                 countText.gameObject.SetActive(false); // Piilota teksti
             }
 		}
+
+        public void DeleteItem()
+        {
+            Item = null;
+            image.sprite = originalSprite;
+            countText.gameObject.SetActive(false); // Piilota teksti
+        }
     }
 }
