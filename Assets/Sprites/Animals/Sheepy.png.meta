@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 280e9499c00d7544585d46074734c8cd
+guid: 3b7fd25bed6b8fd4d958927d8841b7aa
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7193947833615886508
+    second: Sheepy_0
+  - first:
+      213: -8548946156510477133
+    second: Sheepy_1
+  - first:
+      213: 3921352202188594383
+    second: Sheepy_2
+  - first:
+      213: -394615331377202592
+    second: Sheepy_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,11 +53,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5217661, y: 0.16003314}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -113,7 +125,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sheepy_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 4
+        width: 40
+        height: 28
+      alignment: 9
+      pivot: {x: 0.408046, y: 0.31609204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8ad53807906d360800000000000000
+      internalID: 7193947833615886508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheepy_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 4
+        width: 26
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5094314, y: 0.32484958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b48041d3ca0c5980800000000000000
+      internalID: -8548946156510477133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheepy_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 4
+        width: 40
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5796936, y: 0.31609204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc95aa3d017b6630800000000000000
+      internalID: 3921352202188594383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheepy_3
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 4
+        width: 26
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5188628, y: 0.29433945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ab656627b068af0800000000000000
+      internalID: -394615331377202592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
